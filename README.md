@@ -13,7 +13,7 @@ This Python program is a faithful implementation of the Class A transistor ampli
 ### Features
 
 * The user can choose to run the article's example, or enter their own transistor's values.
-* In addition to calculating **_R1_**, **_R2_**, **_RL_**, and **_RE_**, the prgram also calculates the minimum power gain (_Ap_) in dB and minimum signal power (_Ps_) in mW.
+* In addition to calculating **_R1_**, **_R2_**, **_RL_**, and **_RE_**, the prgram also calculates the minimum power gain (_Ap_) in dB, minimum signal power (_Ps_) in mW, and the maximum transitor junction temperature (_Tjmax_) in °C.
 
 ### Background
 
