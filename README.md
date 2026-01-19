@@ -8,7 +8,7 @@
 
 ### Description
 
-This Python program is a faithful implementation of the Class A transistor amplifier bias optimization method described in an article titled _Designing class A amplifiers to meet specified tolerances_ written by _Ward J. Helms_ that was published in the 8 August 1974 edition of _Electronics_. After choosing a suitable bipolar transistor type and regulated power-supply voltage (Vcc), the user enters requested values from the transistor's datasheet to determine the optimal values for **_R1_**, **_R2_**, **_RL_**, and **_RE_**.
+This Python program is a faithful implementation of the Class A transistor amplifier bias optimization method described in an article titled "_Designing class A amplifiers to meet specified tolerances_" written by _Ward J. Helms_ that was published in the 8 August 1974 edition of _Electronics_. After choosing a suitable bipolar transistor type and regulated power-supply voltage (Vcc), the user enters requested values from the transistor's datasheet to determine the optimal values for **_R1_**, **_R2_**, **_RL_**, and **_RE_**.
 
 ### Features
 
