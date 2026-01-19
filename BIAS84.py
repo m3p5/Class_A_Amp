@@ -139,7 +139,7 @@ while True:
     print("Max Tj   = {:.1f} °C".format(Tmax))
 
     again=int(input("Run again (1 = Yes, 0 = No)? "))
-    if again != 1:
+    if again!=1:
         disp_clr()
         print("Goodbye!")
         break
