@@ -1,2 +1,6 @@
+Version 1.1
+- Minor code improvements to reduce program size.
+- Updates RL to nearest E12 standard resistor value after first iteration.
+
 Version 1.0
 - Initial Public Release.

@@ -3,13 +3,13 @@ from ti_system import *
 
 while True:
     disp_clr()
-    print("Class A Amp Bias Optimizer v1.0")
+    print("Class A Amp Bias Optimizer v1.1")
 
-    example=int(input("Run Ward J. Helms' example\n(1 = Yes, 0 = No)? "))
+    example=int(input("Run Ward J. Helms' example\n(1=Yes, 0=No)? "))
 
     if example==0:
         Vcc=float(input("Vcc (V): "))
-        deltaIcQ=float(input("Delta IcQ (%): "))
+        deltaIcQ=float(input("Delta IcQ (%): "))/100
         TAmin=float(input("TAmin (°C): "))
         TAmax=float(input("TAmax (°C): "))
         Tjmax=float(input("Tjmax (°C): "))
@@ -22,7 +22,7 @@ while True:
         hFEmax=float(input("hFEmax: "))
     else:
         Vcc=30.0
-        deltaIcQ=20.0
+        deltaIcQ=0.2
         TAmin=0.0
         TAmax=70.0
         Tjmax=150.0
@@ -34,7 +34,6 @@ while True:
         hFEmin=100.0
         hFEmax=600.0
 
-    deltaIcQ/=100
     temp_coeff=-0.0022
     thetaJA=(Tjmax-25)/PDmax
     RLn=thetaJA*Vcc**2/(4.4*(Tjmax-TAmax))
@@ -43,7 +42,6 @@ while True:
     iteration=1
     max_iterations=10
     tolerance=0.005
-    converged=False
 
     while iteration<max_iterations:
 
@@ -79,7 +77,7 @@ while True:
         
         disp_clr()
         print("Iteration: {:.0f}  ({:.1f}%)".format(iteration,100*delta))
-        print("RL       = {:.0f} Ohms".format(round(RLn)))
+        print("RL       = {:.0f} Ohms".format(round(10*RLn+1)/10))
         print("IcQ      = {:.1f} mA".format(1000*IcQ))
         print("Ic range = {:.1f} - {:.1f} mA".format(1000*Ic_min,1000*Ic_max))
         print("Tmax     = {:.1f} °C".format(Tmax))
@@ -87,10 +85,13 @@ while True:
         print("Tmin     = {:.1f} °C".format(Tmin))
         print("VBEn     = {:.3f} V".format(VBEn))
         print("REn+1    = {:.1f} Ohms".format(round(10*RE)/10))
+        print("Press any key to continue...")
         wait_key()
 
+        standard_values=[820,910,1000,1100,1200]
+        RLn=min([v for v in standard_values if v>=RLn],default=RLn)
+
         if delta<tolerance:
-            converged = True
             break
 
         iteration+=1
@@ -131,14 +132,14 @@ while True:
     print("R1  = {:.0f} Ohms".format(round(R1)))
     print("R2  = {:.0f} Ohms".format(round(R2)))
     print("RE  = {:.0f} Ohms".format(round(RE)))
-    print("RL  = {:.0f} Ohms".format(round(RLn)))
+    print("RL  = {:.0f} Ohms".format(round(10*RLn+1)/10))
     print("IcQ = {:.1f} mA".format(1000*IcQ))
     print("Ic range = {:.1f} - {:.1f} mA".format(1000*Ic_min,1000*Ic_max))
     print("Min gain = {:.1f} dB".format(Ap_dB))
     print("Min Ps   = {:.1f} mW".format(Ps_mW))
     print("Max Tj   = {:.1f} °C".format(Tmax))
 
-    again=int(input("Run again (1 = Yes, 0 = No)? "))
+    again=int(input("Run again (1=Yes, 0=No)? "))
     if again!=1:
         disp_clr()
         print("Goodbye!")
