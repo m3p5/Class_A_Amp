@@ -2,19 +2,21 @@
 
 ## This Python program is designed to run on the TI-84 Plus CE Python Edition Calculator
 
-### Current Release
-
-* Version 2.0
-
 ### Description
 
 This Python program is a faithful implementation of the Class A transistor amplifier bias optimization method described in an article titled "_Designing class A amplifiers to meet specified tolerances_" written by _Ward J. Helms_ that was published in the 8 August 1974 edition of _Electronics_. A copy of this article is located [here](https://github.com/m3p5/Class_A_Amp/blob/main/References/Designing_Class_A_Amps-Electronics_1974-08-08.pdf). This program gives the user the option of running the example in the article or entering values from their own transistor's datasheet to determine the optimal values for **_R1_**, **_R2_**, **_RL_**, and **_RE_**. The datasheet for the Texas Instruments TIS98 NPN transistor used in the article is located [here](https://github.com/m3p5/Class_A_Amp/blob/main/References/TIS94_thru_TIS99_Datasheet.pdf).
+
+![Class A Amp](./References/Class-A_Amp.png)
 
 ### Features
 
 * The user can choose to run the article's example, or enter their own transistor's values.
 * In addition to calculating **_R1_**, **_R2_**, **_RL_**, and **_RE_**, the prgram also calculates the minimum power gain (_Ap_) in dB, minimum signal power (_Ps_) in mW, and the maximum transistor junction temperature (_Tjmax_) in °C.
 * The final optimzed set of resistor values are choosen from the nearest [E24](https://en.wikipedia.org/wiki/E_series_of_preferred_numbers#E24_subsets) standard resistor values.
+
+### Current Release
+
+* Version 2.0
 
 ### Installation Notes
 
