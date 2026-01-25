@@ -1,6 +1,6 @@
 # Class A Transistor Amplifier Bias Optimization Program
 
-## This Python program is designed to run on the TI-84 Plus CE Python Edition Calculator
+## This Python program is designed to run on the TI-84 Plus CE Python graphing calculator
 
 ### Description
 
