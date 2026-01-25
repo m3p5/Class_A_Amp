@@ -3,7 +3,7 @@ from BIASDEFA import compute_bias
 
 while True:
     disp_clr()
-    print("Class A Amp Bias Optimizer v2.0")
+    print("Class A Amp Bias Optimizer v2.1")
     example=int(input("Run Ward J. Helms' example\n(1=Yes, 0=No)? "))
     
     if example==1:

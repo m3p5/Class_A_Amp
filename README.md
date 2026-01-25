@@ -16,7 +16,7 @@ This Python program is a faithful implementation of the Class A transistor ampli
 
 ### Current Release
 
-* Version 2.0
+* Version 2.1
 
 ### Installation Notes
 

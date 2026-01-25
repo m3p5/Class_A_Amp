@@ -19,7 +19,7 @@ def compute_bias(p):
         Ic_min=IcQ*(1-deltaIcQ)
         
         VCEmax=p['Vcc']-Ic_max*(RLn+RE)
-        Tmax=thetaJA*IcQ*(p['Vcc']-(RLn+RE)*IcQ)+p['TAmax']
+        Tmax=thetaJA*Ic_max*(p['Vcc']-(RLn+RE)*Ic_max)+p['TAmax']
 
         if Tmax>p['Tjmax']:
             RLn*=1.1
@@ -65,13 +65,13 @@ def compute_bias(p):
 
         iteration+=1
 
-    RE=closest_resistor(RE)
+    RE=closest_resistor(RE,mode='next_higher')
 
     IcQ=p['Vcc']/(2*(RLn+RE))
     Ic_max=IcQ*(1+deltaIcQ)
     Ic_min=IcQ*(1-deltaIcQ)
 
-    Tmax=thetaJA*IcQ*(p['Vcc']-(RLn+RE)*IcQ)+p['TAmax']
+    Tmax=thetaJA*Ic_max*(p['Vcc']-(RLn+RE)*Ic_max)+p['TAmax']
     VBEx=p['VBEmin']+p['deltaVBE']*log(Ic_max/p['I1'],10)+temp_coeff*(Tmax-25)
 
     Tmin=thetaJA*Ic_min*(p['Vcc']-(RLn+RE)*Ic_min)+p['TAmin']
