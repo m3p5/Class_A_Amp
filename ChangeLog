@@ -1,3 +1,6 @@
+Version 2.2
+- Reverted back to the 1974 article's formula for computing Tmax after additional research.
+
 Version 2.1
 - Minor correction to the formula for computing Tmax.
 

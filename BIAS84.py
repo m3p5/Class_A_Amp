@@ -3,13 +3,13 @@ from BIASDEFA import compute_bias
 
 while True:
     disp_clr()
-    print("Class A Amp Bias Optimizer v2.1")
+    print("Class A Amp Bias Optimizer v2.2")
     example=int(input("Run Ward J. Helms' example\n(1=Yes, 0=No)? "))
     
     if example==1:
         p={
             'Vcc':30.0,
-            'deltaIcQ':0.20,
+            'deltaIcQ':0.2,
             'TAmin':0.0,
             'TAmax':70.0,
             'Tjmax':150.0,
